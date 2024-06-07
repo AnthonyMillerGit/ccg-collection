@@ -1,22 +1,23 @@
 // src/components/ProfilePage.js
 import React from 'react';
-import Header from './Header';
+import SignUpForm from './SignUpForm';
+import LoginForm from './LoginForm';
 import styled from 'styled-components';
 
-const PageContainer = styled.div`
-  padding: 20px;
-  text-align: center;
+const ProfileContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #FDFFE2;
 `;
 
 const ProfilePage = () => {
   return (
-    <>
-      <Header />
-      <PageContainer>
-        <h1>My Profile</h1>
-        <p>This is the profile page.</p>
-      </PageContainer>
-    </>
+    <ProfileContainer>
+      <SignUpForm />
+      <LoginForm />
+    </ProfileContainer>
   );
 };
 
