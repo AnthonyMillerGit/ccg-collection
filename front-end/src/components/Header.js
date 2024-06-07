@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
-  background-color: #333;
+  background-color: #1A2130;  // Dark Background
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -12,7 +12,7 @@ const HeaderContainer = styled.header`
 `;
 
 const Logo = styled.h1`
-  color: white;
+  color: #83B4FF;  // Primary Color
   margin: 0;
 `;
 
@@ -22,11 +22,11 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
-  color: white;
+  color: #FDFFE2;  // Light Background Color
   text-decoration: none;
   font-size: 1em;
   &:hover {
-    text-decoration: underline;
+    color: #83B4FF;  // Primary Color
   }
 `;
 
