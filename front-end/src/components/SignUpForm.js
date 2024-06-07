@@ -50,9 +50,9 @@ const SignUpForm = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/signup', { username, email, password });
+      const response = await axios.post('http://localhost:8000/api/signup', { username, email, password });
       console.log(response.data);
-      // Handle successful signup (e.g., redirect to profile)
+      // Handle successful signup (e.g., redirect to profile or show success message)
     } catch (error) {
       console.error(error);
       // Handle error (e.g., display error message)
