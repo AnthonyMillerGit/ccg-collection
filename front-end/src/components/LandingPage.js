@@ -1,5 +1,6 @@
 // src/components/LandingPage.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './Header';
 
@@ -15,7 +16,7 @@ const LandingContainer = styled.div`
 const HeroSection = styled.div`
   width: 100%;
   height: 50vh;
-  background: url('https://source.unsplash.com/random/1600x900') center/cover no-repeat;
+  background: url('/images/CCG-landing-page.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,6 +101,12 @@ const CTAButton = styled.button`
 `;
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const handleExploreNow = () => {
+    navigate('/cards');
+  };
+
   return (
     <>
       <Header />
@@ -136,7 +143,7 @@ const LandingPage = () => {
           </Testimonial>
         </TestimonialsSection>
         <CallToAction>
-          <CTAButton>Explore Now</CTAButton>
+          <CTAButton onClick={handleExploreNow}>Explore Now</CTAButton>
         </CallToAction>
       </LandingContainer>
     </>

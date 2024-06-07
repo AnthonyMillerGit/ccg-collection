@@ -5,8 +5,17 @@ import Card from './components/Card';
 import SearchForm from './components/SearchForm';
 import { fetchCards, searchCards } from './api';
 import GlobalStyle from './styles/globalStyles';
+import styled from 'styled-components';
 
-function App() {
+const CardGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+`;
+
+const App = () => {
   const [cards, setCards] = useState([]);
   const [page, setPage] = useState(1);
   const [pageSize] = useState(20);
@@ -46,11 +55,11 @@ function App() {
       <GlobalStyle />
       <h1>Card Collection</h1>
       <SearchForm onSearch={handleSearch} />
-      <div>
+      <CardGrid>
         {cards.map((card) => (
-          <Card key={card.id} name={card.name} imageUrl={card.imageUrl} text={card.text} />
+          <Card key={card.id} name={card.name} imageUrl={card.image_uris ? card.image_uris.small : ''} text={card.oracle_text} />
         ))}
-      </div>
+      </CardGrid>
       <div>
         <button onClick={handlePreviousPage} disabled={page === 1}>
           Previous
@@ -59,6 +68,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
