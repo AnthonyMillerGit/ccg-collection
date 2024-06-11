@@ -140,8 +140,8 @@ const LandingPage = () => {
       <Header />
       <LandingContainer>
         <HeroSection>
-          <HeroTitle>Welcome to Card Collection</HeroTitle>
-          <HeroSubtitle>Discover and collect your favorite cards</HeroSubtitle>
+          <HeroTitle>CCG Collection</HeroTitle>
+          <HeroSubtitle>Catalogue and Organizational Tool For Collectible Card Games</HeroSubtitle>
         </HeroSection>
         <FeaturesSection>
           <Feature>

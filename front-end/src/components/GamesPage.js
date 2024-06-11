@@ -1,21 +1,32 @@
-// src/components/GamesPage.js
 import React from 'react';
-import Header from './Header';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Header from './Header';
 
-const PageContainer = styled.div`
+const GamesContainer = styled.div`
   padding: 20px;
-  text-align: center;
+`;
+
+const GameLink = styled(Link)`
+  display: block;
+  margin: 10px 0;
+  color: #83B4FF;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const GamesPage = () => {
   return (
     <>
       <Header />
-      <PageContainer>
-        <h1>Games</h1>
-        <p>This is the games page where you can search for cards.</p>
-      </PageContainer>
+      <GamesContainer>
+        <h2>Available Games</h2>
+        <GameLink to="/games/magic-the-gathering">Magic: The Gathering</GameLink>
+        <GameLink to="/games/other-game">Other Game</GameLink>
+        {/* Add more games as needed */}
+      </GamesContainer>
     </>
   );
 };

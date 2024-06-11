@@ -1,26 +1,25 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import GlobalStyle from './styles/globalStyle';
 import LandingPage from './components/LandingPage';
+import SignUpForm from './components/SignUpForm';
+import LoginForm from './components/LoginForm';
 import ProfilePage from './components/ProfilePage';
-import CollectionPage from './components/CollectionPage';
 import GamesPage from './components/GamesPage';
+import GameDetailsPage from './components/GameDetailsPage';
 
-const App = () => {
+function App() {
   return (
-    <>
-      <GlobalStyle />
-      <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/collection" element={<CollectionPage />} />
-          <Route path="/games" element={<GamesPage />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/games" element={<GamesPage />} />
+        <Route path="/games/:gameId" element={<GameDetailsPage />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
