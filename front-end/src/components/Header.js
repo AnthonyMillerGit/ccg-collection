@@ -1,4 +1,3 @@
-// src/components/Header.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -35,6 +34,7 @@ const Header = () => {
     <HeaderContainer>
       <Logo>Card Collection</Logo>
       <Nav>
+        <NavLink to="/">Home</NavLink>
         <NavLink to="/profile">My Profile</NavLink>
         <NavLink to="/collection">My Collection</NavLink>
         <NavLink to="/games">Games</NavLink>
